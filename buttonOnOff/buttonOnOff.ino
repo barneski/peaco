@@ -1,5 +1,5 @@
-// This program responds to button S3 on the Romeo microcontroller.  
-// When S3 is pressed initially, the LED turns (and stays) on.  When
+// This program responds to button S4 on the Romeo microcontroller.  
+// When S4 is pressed initially, the LED turns (and stays) on.  When
 // the button is pressed again, the LED turns off.
 
 int ledPin = 13;
@@ -48,12 +48,12 @@ boolean digRead() {
     adc_key_in = analogRead(7);
     key = get_key(adc_key_in);
   }
-  return (key == 3);
+  return (key == 3); // corresponds to button S4 since keys are indexed from 0
 }
 
 int get_key(unsigned int input) {
   // Takes an ADC value and converts it to a button
-  // number between 1 and NUM_KEYS
+  // number between 0 and NUM_KEYS - 1
   int k;
   for (k = 0; k < NUM_KEYS; k++)
   {
