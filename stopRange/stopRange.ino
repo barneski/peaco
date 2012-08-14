@@ -8,7 +8,7 @@ int speed2 = 6;     //M2 Speed Control (right side)
 int direction1 = 4;    //M1 Direction Control
 int direction2 = 7;    //M1 Direction Control
 
-void stop(void)  //Stop
+void stop()  //Stop
 {
   digitalWrite(speed1,LOW);   
   digitalWrite(speed2,LOW);      
@@ -59,8 +59,7 @@ void loop() {
     back_off(100, 100);
     delay(3000);
     turn_R();
-    delay(5000);
-    advance(100, 100);
+    delay(500);
   }
   else advance(100, 100);
   delay(500);
